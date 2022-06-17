@@ -4,6 +4,11 @@ def getdate():
     return datetime.datetime.now()
 
 def DietFile(choice):
+    """
+    This function is to write data in diet file of following three person.
+    :param choice: integer to choose person from Subhan Hassaan and Ahmad
+    """
+
     if choice == 1:
         f = open("SubhanDiet.txt", "a")
         print("Enter the diet you want to enter in the file.")
@@ -27,6 +32,11 @@ def DietFile(choice):
         f.close()
 
 def ExcerciseFile(choice):
+    """
+    This function is to write data in excercise file of following three person.
+    :param choice: integer to choose person from Subhan Hassaan and Ahmad
+    """
+
     if choice == 1:
         f = open("SubhanExcercise.txt", "a")
         print("Enter Excercise you want to enter : ")
@@ -54,15 +64,25 @@ def ExcerciseFile(choice):
 
 
 def fileWrite(choice):
-        print("Enter 1 for write in excercise file and 2 for write in diet file.")
-        fileChoice = int(input())
-        if fileChoice == 1:
-            ExcerciseFile(choice)
-        elif fileChoice == 2:
-            DietFile(choice)
+    """
+    This function is deciding want to write in excercise file or diet file.
+    :param choice: Person choice
+    """
+
+    print("Enter 1 for write in excercise file and 2 for write in diet file.")
+    fileChoice = int(input())
+    if fileChoice == 1:
+        ExcerciseFile(choice)
+    elif fileChoice == 2:
+        DietFile(choice)
 
 
 def readExcerciseFile(choice):
+    """
+    This function is to read data from excercise file of following three person.
+    :param choice: integer to choose person from Subhan Hassaan and Ahmad
+    """
+
     if choice == 1:
         from os.path import exists
         file_exists = exists("SubhanExcercise.txt")
@@ -90,6 +110,11 @@ def readExcerciseFile(choice):
             print("\"Ahmad Excercise\" does not exist.")
 
 def readDietFile(choice):
+    """
+    This function is to read data from diet file of following three person.
+    :param choice: integer to choose person from Subhan Hassaan and Ahmad
+    """
+
     if choice == 1:
         from os.path import exists
         file_exists = exists("SubhanDiet.txt")
@@ -116,6 +141,11 @@ def readDietFile(choice):
             print("\"Ahmad Diet\" does not exist.")
 
 def fileRead(choice):
+    """
+   This function is deciding want to read in excercise file or diet file.
+   :param choice: Person choice
+    """
+
     print("Enter 1 for read from Excercise file and 2 for read from diet file.")
     fileChoice = int(input())
     if fileChoice == 1:
